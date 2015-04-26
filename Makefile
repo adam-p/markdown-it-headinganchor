@@ -30,7 +30,7 @@ coverage:
 test-ci: lint
 	./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 
-publish:
+publish: test browserify
 	@if test 0 -ne `git status --porcelain | wc -l` ; then \
 		echo "Unclean working tree. Commit or stash changes first." >&2 ; \
 		exit 128 ; \
