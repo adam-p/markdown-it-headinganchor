@@ -15,7 +15,15 @@ var generate    = require('markdown-it-testgen');
 
 var headinganchor = require('..');
 
-describe('markdown-it-headinganchor', function () {
+describe('markdown-it-headinganchor fixtures', function () {
   var md = markdownit().use(headinganchor);
   generate(path.join(__dirname, 'fixtures'), { header: true }, md);
+});
+
+describe('markdown-it-headinganchor options', function () {
+  it('should render correctly with a custom anchor class', function() {
+    var md = markdownit().use(headinganchor, {anchorClass: 'my-class'});
+    var s = '# test';
+    var target = '<h1><a name="test" class="my-class" href="#"></a>test</h1>';
+  });
 });

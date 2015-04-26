@@ -26,4 +26,14 @@ So this extension renders from this...
 
 The anchor `name` is the output of `encodeURIComponent(original_heading_text)`.
 
+Much like other markdown-it plugins, the usage is:
+
+```js
+var md = require('markdown-it')();
+md.use(require('markdown-it-headinganchor'), {
+  anchorClass: 'my-class-name' // default: 'markdown-it-headinganchor'
+});
+md.render('# My Heading');
+```
+
 Originally developed for use with [Markdown Here](https://github.com/adam-p/markdown-here).
