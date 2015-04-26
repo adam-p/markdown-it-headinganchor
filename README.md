@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/adam-p/markdown-it-headinganchor.svg?branch=master)](https://travis-ci.org/adam-p/markdown-it-headinganchor)
 [![NPM version](https://img.shields.io/npm/v/markdown-it-footnote.svg?style=flat)](https://www.npmjs.org/package/markdown-it-footnote)
-[![Coverage Status](https://coveralls.io/repos/adam-p/markdown-it-headinganchor/badge.svg?branch=master)](https://coveralls.io/r/adam-p/markdown-it-headinganchor?branch=master)
+[![Coverage Status](https://coveralls.io/repos/adam-p/markdown-it-headinganchor/badge.svg)](https://coveralls.io/r/adam-p/markdown-it-headinganchor)
 
 
 # markdown-it-headinganchor
