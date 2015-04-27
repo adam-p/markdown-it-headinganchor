@@ -16,18 +16,18 @@ some para text
 
 more para text
 .
-<h1 id="head%201"><a name="head%201" class="markdown-it-headinganchor" href="#"></a>head 1</h1>
+<h1 id="head1"><a name="head1" class="markdown-it-headinganchor" href="#"></a>head 1</h1>
 <p>some para text</p>
-<h2 id="head%202"><a name="head%202" class="markdown-it-headinganchor" href="#"></a>head 2</h2>
+<h2 id="head2"><a name="head2" class="markdown-it-headinganchor" href="#"></a>head 2</h2>
 <p>more para text</p>
 .
 
 
 should cope with fairly complex heading text
 .
-##### a _b_ **c** `d`
+##### a _b_ **c** `d` "e"
 .
-<h5 id="a%20_b_%20**c**%20%60d%60"><a name="a%20_b_%20**c**%20%60d%60" class="markdown-it-headinganchor" href="#"></a>a <em>b</em> <strong>c</strong> <code>d</code></h5>
+<h5 id="a_b_**c**%60d%60%22e%22"><a name="a_b_**c**%60d%60%22e%22" class="markdown-it-headinganchor" href="#"></a>a <em>b</em> <strong>c</strong> <code>d</code> &quot;e&quot;</h5>
 .
 
 
@@ -42,9 +42,9 @@ should add anchors to headings within other block elements
 > more para text
 .
 <blockquote>
-<h1 id="head%201"><a name="head%201" class="markdown-it-headinganchor" href="#"></a>head 1</h1>
+<h1 id="head1"><a name="head1" class="markdown-it-headinganchor" href="#"></a>head 1</h1>
 <p>some para text</p>
-<h2 id="head%202"><a name="head%202" class="markdown-it-headinganchor" href="#"></a>head 2</h2>
+<h2 id="head2"><a name="head2" class="markdown-it-headinganchor" href="#"></a>head 2</h2>
 <p>more para text</p>
 </blockquote>
 .

@@ -7,10 +7,16 @@
 /*jshint node:true*/
 
 
-function makeRule(options) {
+function slugify(md, s) {
+  // Unicode-friendly
+  var spaceRegex = new RegExp(md.utils.lib.ucmicro.Z.source, 'g');
+  return encodeURIComponent(s.replace(spaceRegex, ''));
+}
+
+function makeRule(md, options) {
   return function addHeadingAnchors(state) {
     // Go to length-2 because we're going to be peeking ahead.
-    for (var i = 0; i < state.tokens.length-2; i++) {
+    for (var i = 0; i < state.tokens.length-1; i++) {
       if (state.tokens[i].type !== 'heading_open' ||
           state.tokens[i+1].type !== 'inline') {
         continue;
@@ -23,7 +29,7 @@ function makeRule(options) {
         continue;
       }
 
-      var anchorName = encodeURIComponent(headingInlineToken.content);
+      var anchorName = slugify(md, headingInlineToken.content);
 
       if (options.addHeadingID) {
         state.tokens[i].attrPush(['id', anchorName]);
@@ -54,5 +60,5 @@ module.exports = function headinganchor_plugin(md, opts) {
     addHeadingAnchor: true
   };
   var options = md.utils.assign(defaults, opts);
-  md.core.ruler.push('heading_anchors', makeRule(options));
+  md.core.ruler.push('heading_anchors', makeRule(md, options));
 };
