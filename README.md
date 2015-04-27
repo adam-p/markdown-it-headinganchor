@@ -18,7 +18,7 @@ So this extension renders from this...
 ...to this:
 
 ```html
-<h1>
+<h1 id="My%20Heading">
   <a name="My%20Heading" class="markdown-it-headinganchor" href="#"></a>
   My Heading
 </h1>
@@ -31,7 +31,9 @@ Much like other markdown-it plugins, the usage is:
 ```js
 var md = require('markdown-it')();
 md.use(require('markdown-it-headinganchor'), {
-  anchorClass: 'my-class-name' // default: 'markdown-it-headinganchor'
+  anchorClass: 'my-class-name', // default: 'markdown-it-headinganchor'
+  addHeadingID: true,           // default: true
+  addHeadingAnchor: true        // default: true
 });
 md.render('# My Heading');
 ```
