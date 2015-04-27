@@ -13,18 +13,30 @@ So this extension renders from this...
 
 ```md
 # My Heading
+...
+[Link to that heading](#MyHeading).
 ```
 
 ...to this:
 
 ```html
-<h1 id="My%20Heading">
-  <a name="My%20Heading" class="markdown-it-headinganchor" href="#"></a>
+<h1 id="MyHeading">
+  <a name="MyHeading" class="markdown-it-headinganchor" href="#"></a>
   My Heading
 </h1>
+...
+<p>
+  <a href="#MyHeading">Link to that heading</a>.
+</p>
 ```
 
-The anchor `name` is the output of `encodeURIComponent(original_heading_text)`.
+To refer to in heading anchor in a link, remove all spaces from the original text. So, for example, you might have:
+
+```md
+## `code` is **bold**
+...
+[link to the heading](#`code`is**bold**)
+```
 
 Much like other markdown-it plugins, the usage is:
 

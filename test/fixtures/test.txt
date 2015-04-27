@@ -48,3 +48,13 @@ should add anchors to headings within other block elements
 <p>more para text</p>
 </blockquote>
 .
+
+
+slugification should match a link that is the text with spaces removed
+.
+# **Hello** `こんにちは`
+[Link label](**Hello**`こんにちは`)
+.
+<h1 id="**Hello**%60%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%60"><a name="**Hello**%60%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%60" class="markdown-it-headinganchor" href="#"></a><strong>Hello</strong> <code>こんにちは</code></h1>
+<p><a href="**Hello**%60%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%60">Link label</a></p>
+.
