@@ -16,9 +16,9 @@ some para text
 
 more para text
 .
-<h1 id="head1"><a name="head1" class="markdown-it-headinganchor" href="#"></a>head 1</h1>
+<h1 id="head-1"><a name="head-1" class="markdown-it-headinganchor" href="#"></a>head 1</h1>
 <p>some para text</p>
-<h2 id="head2"><a name="head2" class="markdown-it-headinganchor" href="#"></a>head 2</h2>
+<h2 id="head-2"><a name="head-2" class="markdown-it-headinganchor" href="#"></a>head 2</h2>
 <p>more para text</p>
 .
 
@@ -27,7 +27,7 @@ should cope with fairly complex heading text
 .
 ##### a _b_ **c** `d` "e"
 .
-<h5 id="a_b_**c**%60d%60%22e%22"><a name="a_b_**c**%60d%60%22e%22" class="markdown-it-headinganchor" href="#"></a>a <em>b</em> <strong>c</strong> <code>d</code> &quot;e&quot;</h5>
+<h5 id="a-b-c-d-e"><a name="a-b-c-d-e" class="markdown-it-headinganchor" href="#"></a>a <em>b</em> <strong>c</strong> <code>d</code> &quot;e&quot;</h5>
 .
 
 
@@ -42,9 +42,9 @@ should add anchors to headings within other block elements
 > more para text
 .
 <blockquote>
-<h1 id="head1"><a name="head1" class="markdown-it-headinganchor" href="#"></a>head 1</h1>
+<h1 id="head-1"><a name="head-1" class="markdown-it-headinganchor" href="#"></a>head 1</h1>
 <p>some para text</p>
-<h2 id="head2"><a name="head2" class="markdown-it-headinganchor" href="#"></a>head 2</h2>
+<h2 id="head-2"><a name="head-2" class="markdown-it-headinganchor" href="#"></a>head 2</h2>
 <p>more para text</p>
 </blockquote>
 .
@@ -53,8 +53,8 @@ should add anchors to headings within other block elements
 slugification should match a link that is the text with spaces removed
 .
 # **Hello** `こんにちは`
-[Link label](**Hello**`こんにちは`)
+[Link label](hello)
 .
-<h1 id="**Hello**%60%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%60"><a name="**Hello**%60%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%60" class="markdown-it-headinganchor" href="#"></a><strong>Hello</strong> <code>こんにちは</code></h1>
-<p><a href="**Hello**%60%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%60">Link label</a></p>
+<h1 id="hello"><a name="hello" class="markdown-it-headinganchor" href="#"></a><strong>Hello</strong> <code>こんにちは</code></h1>
+<p><a href="hello">Link label</a></p>
 .

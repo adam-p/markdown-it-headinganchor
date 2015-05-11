@@ -9,8 +9,7 @@
 
 function slugify(md, s) {
   // Unicode-friendly
-  var spaceRegex = new RegExp(md.utils.lib.ucmicro.Z.source, 'g');
-  return encodeURIComponent(s.replace(spaceRegex, ''));
+  return require('string')(s).slugify().s;
 }
 
 function makeRule(md, options) {
