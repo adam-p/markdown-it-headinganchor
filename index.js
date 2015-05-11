@@ -9,7 +9,7 @@
 
 function slugify(md, s) {
   // Unicode-friendly
-  return require('string')(s).slugify().s;
+  return encodeURIComponent(require('param-case')(s));
 }
 
 function makeRule(md, options) {
