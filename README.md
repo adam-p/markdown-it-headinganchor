@@ -5,7 +5,7 @@
 
 # markdown-it-headinganchor
 
-This is a [markdown-it](https://github.com/markdown-it/markdown-it) plugin that adds an anchor (i.e., `<a name=\"blah\"...>`) to headings. 
+This is a [markdown-it](https://github.com/markdown-it/markdown-it) plugin that adds an anchor (i.e., `<a name=\"blah\"...>`) to headings.
 
 There are other plugins that add an `id` attribute ([valeriangalliat/markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor)) or `name` attribute ([leff/markdown-it-named-headers](https://github.com/leff/markdown-it-named-headers)) to headings, but neither of these approches work for adding anchors that are not stripped out of email.
 
@@ -46,7 +46,8 @@ md.use(require('markdown-it-headinganchor'), {
   anchorClass: 'my-class-name', // default: 'markdown-it-headinganchor'
   addHeadingID: true,           // default: true
   addHeadingAnchor: true,       // default: true
-  slugify: function(str, md) {} // default: 'My Heading' -> 'MyHeading'
+  slugify: function(str, md) {}, // default: 'My Heading' -> 'MyHeading'
+  linkify: true                 // default: true
 });
 md.render('# My Heading');
 ```
