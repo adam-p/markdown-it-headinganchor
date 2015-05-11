@@ -36,14 +36,13 @@ function makeRule(md, options) {
 
       if (options.addHeadingAnchor) {
         var anchorToken = new state.Token('html_inline', '', 0);
-        var anchorContent = (options.linkify) ? headingInlineToken.content : '';
         anchorToken.content =
           '<a name="' +
           anchorName +
           '" class="' +
           options.anchorClass +
-          '" href="#">'+
-          anchorContent +
+          '" href="#' + ((options.linkify) ? anchorName : '') + '">' +
+          ((options.linkify) ? headingInlineToken.content : '') +
           '</a>';
 
         headingInlineToken.children.unshift(anchorToken);
