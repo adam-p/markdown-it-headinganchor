@@ -53,4 +53,15 @@ describe('markdown-it-headinganchor options', function () {
     target = '<h1 id="test">test</h1>\n';
     expect(md.render(s)).to.equal(target);
   });
+
+  it('should obey the slugify option', function() {
+    var md = markdownit().use(headinganchor, {
+        slugify: function (s) {
+          return s.replace(/\s/g, '-');
+        }
+    });
+    var s = '# test heading';
+    var target = '<h1 id="test-heading"><a name="test-heading" class="markdown-it-headinganchor" href="#"></a>test heading</h1>\n';
+    expect(md.render(s)).to.equal(target);
+  });
 });
