@@ -6,8 +6,7 @@
 'use strict';
 /*jshint node:true*/
 
-
-function slugify(md, s) {
+function slugify(s, md) {
   // Unicode-friendly
   var spaceRegex = new RegExp(md.utils.lib.ucmicro.Z.source, 'g');
   return encodeURIComponent(s.replace(spaceRegex, ''));
@@ -29,7 +28,7 @@ function makeRule(md, options) {
         continue;
       }
 
-      var anchorName = slugify(md, headingInlineToken.content);
+      var anchorName = options.slugify(headingInlineToken.content, md);
 
       if (options.addHeadingID) {
         state.tokens[i].attrPush(['id', anchorName]);
@@ -57,7 +56,8 @@ module.exports = function headinganchor_plugin(md, opts) {
   var defaults = {
     anchorClass: 'markdown-it-headinganchor',
     addHeadingID: true,
-    addHeadingAnchor: true
+    addHeadingAnchor: true,
+    slugify: slugify
   };
   var options = md.utils.assign(defaults, opts);
   md.core.ruler.push('heading_anchors', makeRule(md, options));

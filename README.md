@@ -45,7 +45,8 @@ var md = require('markdown-it')();
 md.use(require('markdown-it-headinganchor'), {
   anchorClass: 'my-class-name', // default: 'markdown-it-headinganchor'
   addHeadingID: true,           // default: true
-  addHeadingAnchor: true        // default: true
+  addHeadingAnchor: true,       // default: true
+  slugify: function(str, md) {} // default: 'My Heading' -> 'MyHeading'
 });
 md.render('# My Heading');
 ```
