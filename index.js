@@ -41,9 +41,15 @@ function makeRule(md, options) {
           anchorName +
           '" class="' +
           options.anchorClass +
-          '" href="#"></a>';
+          '" href="#' + ((options.linkify) ? anchorName : '') + '">' +
+          ((options.linkify) ? headingInlineToken.content : '') +
+          '</a>';
 
         headingInlineToken.children.unshift(anchorToken);
+
+        if (options.linkify) {
+          headingInlineToken.children[1].content = '';
+        }
       }
 
       // Advance past the inline and heading_close tokens.
@@ -57,7 +63,8 @@ module.exports = function headinganchor_plugin(md, opts) {
     anchorClass: 'markdown-it-headinganchor',
     addHeadingID: true,
     addHeadingAnchor: true,
-    slugify: slugify
+    slugify: slugify,
+    linkify: true
   };
   var options = md.utils.assign(defaults, opts);
   md.core.ruler.push('heading_anchors', makeRule(md, options));
