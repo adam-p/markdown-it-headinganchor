@@ -41,7 +41,7 @@ function makeRule(md, options) {
           anchorName +
           '" class="' +
           options.anchorClass +
-          '" href="#"></a>';
+          '" href="#' + anchorName + '"></a>';
 
         headingInlineToken.children.unshift(anchorToken);
       }
